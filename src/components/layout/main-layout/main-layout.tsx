@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import Header from '../header/header';
+import Header from '../header';
 import s from './main-layout.module.scss';
 
 interface IProps {
