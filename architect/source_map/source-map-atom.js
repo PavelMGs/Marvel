@@ -13,6 +13,9 @@ const map = {
   ],
   header: [
     ['component', { rPath: '/layout' }]
+  ],
+  home: [
+    ['component', { rPath: '/pages' }]
   ], 
 };
 
