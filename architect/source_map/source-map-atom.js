@@ -9,14 +9,22 @@ const defaultParams = {
 
 const map = {
   'main-layout': [
-    ['component',  { rPath: '/layout'}]
+    ['component', { rPath: '/layout' }]
   ],
   header: [
     ['component', { rPath: '/layout' }]
   ],
   home: [
     ['component', { rPath: '/pages' }]
-  ], 
+  ],
+  characters: [
+    'page',
+    'component'
+  ],
+  card: [
+    'component'
+  ],
+  filter: ['component']
 };
 
 module.exports = {

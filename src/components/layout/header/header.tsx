@@ -1,12 +1,12 @@
-import Link from 'next/link';
-import React, { memo } from 'react';
-import s from './header.module.scss';
+import Link from 'next/link'
+import React, { memo } from 'react'
+import s from './header.module.scss'
 
 interface IProps { }
 
 const navlinks = [
   { name: 'Home', link: '/' },
-  { name: 'Characters', link: '/characters' },
+  { name: 'Characters', link: '/characters' }
 ]
 
 const Header: React.FC<IProps> = () => {
@@ -25,7 +25,7 @@ const Header: React.FC<IProps> = () => {
         </ul>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default memo(Header);
+export default memo(Header)

@@ -1,11 +1,14 @@
-import { put, call, take } from 'redux-saga/effects';
-import { setCharacters } from '../actions/characters';
-import API from '../API';
+import { put, call, takeEvery } from 'redux-saga/effects'
+import { setCharacters } from '../actions/characters'
+import API from '../API'
 
-function* getCharacters(): any {
-  yield take('GET_CHARACTERS');
-  const data = yield call(API.get, '/v1/public/characters');
-  yield put(setCharacters(data));
+function * getCharacters ({ payload }: { type: string, payload: number }): any {
+  const data = yield call(API.get, '/v1/public/characters', { offset: 20 * payload })
+  yield put(setCharacters(data))
 }
 
-export default getCharacters;
+export function * watchGetCharacters () {
+  yield takeEvery('GET_CHARACTERS', getCharacters)
+}
+
+export default getCharacters

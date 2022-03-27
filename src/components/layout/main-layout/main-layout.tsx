@@ -1,6 +1,6 @@
-import React, { memo } from 'react';
-import Header from '../header';
-import s from './main-layout.module.scss';
+import React, { memo } from 'react'
+import Header from '../header'
+import s from './main-layout.module.scss'
 
 interface IProps {
   children: React.ReactChild
@@ -15,4 +15,4 @@ const MainLayout: React.FC<IProps> = ({ children }) => {
   )
 }
 
-export default memo(MainLayout);
+export default memo(MainLayout)

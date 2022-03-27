@@ -1,9 +1,9 @@
 import { all } from 'redux-saga/effects'
-import getCharacters from './characters';
+import { watchGetCharacters } from './characters'
 
-function* rootSaga() {
+function * rootSaga () {
   yield all([
-    getCharacters()
+    watchGetCharacters()
   ])
 }
 

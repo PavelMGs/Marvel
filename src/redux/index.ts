@@ -3,10 +3,11 @@ import { createWrapper } from "next-redux-wrapper";
 import createSagaMiddleware, { Task } from "redux-saga";
 import rootSaga from "./sagas";
 import reducers from "./reducers";
+import { CharactersResponse } from '../types/characters';
 
-export type StoreType = {
+export type RootState = {
   state:{
-    characters: any;
+    characters: CharactersResponse;
     tick: string;
   }
 } 

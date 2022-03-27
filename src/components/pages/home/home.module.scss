@@ -1,6 +1,5 @@
 .root {
   position: relative;
-  background-color: rgb(226, 54, 54);
   flex: 1;
 }
 
@@ -19,6 +18,19 @@
   animation-duration: 4500ms;
 };
 
+.docsText {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  
+  animation-name: textAnimation;
+  animation-duration: 4500ms;
+};
+
 @keyframes textAnimation {
   0% {
     opacity: 0;
@@ -31,14 +43,4 @@
   100% {
     opacity: 100;
   }
-}
-
-.docsText {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 32px;
-  font-weight: 700;
-  color: white;
 }
