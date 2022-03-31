@@ -32,11 +32,13 @@ const Character: React.FC<IProps> = ({ character }) => {
       </button>
       <div className={cn(s.block, { [s.isOpen]: isComicsOpen })}>
         <div className={cn(s.list, { [s.isOpen]: isComicsOpen })}>
-          {comics.items.map((item) => (
-            <div className={s.listItem} key={item.name + item.resourceURI}>
-              <Link href="/">{item.name}</Link>
-            </div>
-          ))}
+          {comics.items.length
+            ? comics.items.map((item) => (
+                <div className={s.listItem} key={item.name + item.resourceURI}>
+                  <div>{item.name}</div>
+                </div>
+              ))
+            : 'No data'}
         </div>
       </div>
       <button className={s.blockTitle} onClick={() => setIsSeriesOpen(!isSeriesOpen)}>
@@ -44,11 +46,13 @@ const Character: React.FC<IProps> = ({ character }) => {
       </button>
       <div className={cn(s.block, { [s.isOpen]: isSeriesOpen })}>
         <div className={cn(s.list, { [s.isOpen]: isSeriesOpen })}>
-          {series.items.map((item) => (
-            <div className={s.listItem} key={item.name + item.resourceURI}>
-              <Link href="/">{item.name}</Link>
-            </div>
-          ))}
+          {series.items.length
+            ? series.items.map((item) => (
+                <div className={s.listItem} key={item.name + item.resourceURI}>
+                  <div>{item.name}</div>
+                </div>
+              ))
+            : 'No data'}
         </div>
       </div>
       <button className={s.blockTitle} onClick={() => setIsEventsOpen(!isEventsOpen)}>
@@ -56,11 +60,13 @@ const Character: React.FC<IProps> = ({ character }) => {
       </button>
       <div className={cn(s.block, { [s.isOpen]: isEventsOpen })}>
         <div className={cn(s.list, { [s.isOpen]: isEventsOpen })}>
-          {events.items.map((item) => (
-            <div className={s.listItem} key={item.name + item.resourceURI}>
-              <Link href="/">{item.name}</Link>
-            </div>
-          ))}
+          {events.items.length
+            ? events.items.map((item) => (
+                <div className={s.listItem} key={item.name + item.resourceURI}>
+                  <div>{item.name}</div>
+                </div>
+              ))
+            : 'No data'}
         </div>
       </div>
     </div>
