@@ -25,7 +25,7 @@ const Characters: React.FC<IProps> = ({ characters }) => {
     <div className={s.root}>
       <div className={s.filtersContainer}></div>
       <div className={s.charactersContainer}>
-        {characters.results && characters.results.map((character) => <Card character={character} key={character.id} />)}
+        {characters.data.results && characters.data.results.map((character) => <Card character={character} key={character.id} />)}
       </div>
       {
           <ReactPaginate
@@ -34,7 +34,7 @@ const Characters: React.FC<IProps> = ({ characters }) => {
             nextLabel="next >"
             onPageChange={handleChangePage}
             pageRangeDisplayed={3}
-            pageCount={characters.total / 20}
+            pageCount={characters.data.total / 20}
             previousLabel="< previous"
             renderOnZeroPageCount={() => null}
             className={s.pagination}

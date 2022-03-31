@@ -1,26 +1,13 @@
 export interface CharactersResponse {
-  offset: number;
-  limit: number;
-  total: number;
-  count: number;
-  results: Character[];
-}
-
-export interface CharacterResponse {
   code: number;
   status: string;
   copyright: string;
   attributionText: 'Data provided by Marvel. © 2022 MARVEL';
   attributionHTML: '<a href="http://marvel.com">Data provided by Marvel. © 2022 MARVEL</a>';
   etag: string;
-  data: {
-    offset: number;
-    limit: number;
-    total: number;
-    count: number;
-    results: Character;
-  };
+  data: { offset: number; limit: number; total: number; count: number; results: Character[] };
 }
+
 export interface Character {
   id: number;
   name: string;

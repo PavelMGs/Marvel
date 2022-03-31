@@ -1,32 +1,31 @@
-import { applyMiddleware, createStore, Store } from 'redux';
-import { createWrapper } from "next-redux-wrapper";
-import createSagaMiddleware, { Task } from "redux-saga";
-import rootSaga from "./sagas";
-import reducers from "./reducers";
-import { CharactersResponse } from '../types/characters';
+import { applyMiddleware, createStore, Store } from 'redux'
+import { createWrapper } from 'next-redux-wrapper'
+import createSagaMiddleware, { Task } from 'redux-saga'
+import rootSaga from './sagas'
+import reducers from './reducers'
+import { CharactersResponse } from '../types/characters'
+import { composeWithDevTools } from '@redux-devtools/extension'
 
 export type RootState = {
-  state:{
-    characters: CharactersResponse;
-    tick: string;
-  }
-} 
+  characters: CharactersResponse;
+  character: CharactersResponse;
+}
 
  interface SagaStore extends Store {
   sagaTask?: Task;
 }
 
-export const sagaMiddleware = createSagaMiddleware();
+export const sagaMiddleware = createSagaMiddleware()
 
 const makeStore = () => {
-  const sagaMiddleware = createSagaMiddleware();
+  const sagaMiddleware = createSagaMiddleware()
 
-  const store = createStore(reducers, applyMiddleware(sagaMiddleware));
-  
-  (store as SagaStore).sagaTask = sagaMiddleware.run(rootSaga);
-  return store;
-};
+  const store = createStore(reducers, composeWithDevTools(applyMiddleware(sagaMiddleware)));
 
-const wrapper = createWrapper(makeStore, { debug: false });
+  (store as SagaStore).sagaTask = sagaMiddleware.run(rootSaga)
+  return store
+}
 
-export default wrapper;
+const wrapper = createWrapper(makeStore, { debug: false })
+
+export default wrapper

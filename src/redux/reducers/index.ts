@@ -1,22 +1,10 @@
-import { HYDRATE } from "next-redux-wrapper";
-import { combineReducers } from "redux";
-import charactersReducer from "./characters";
-
-const wrapperReducer = (state = { tick: 'init' }, action: any) => {
-  switch (action.type) {
-    case HYDRATE:
-      // Attention! This will overwrite client state! Real apps should use proper reconciliation..
-      return { ...state, ...action.payload };
-    case 'TICK':
-      return { ...state, tick: action.payload };
-    default:
-      return state;
-  }
-};
+import { combineReducers } from 'redux'
+import characterReducer from './character'
+import charactersReducer from './characters'
 
 const reducers = combineReducers({
-  state: wrapperReducer,
   characters: charactersReducer,
-});
+  character: characterReducer
+})
 
-export default reducers;
+export default reducers

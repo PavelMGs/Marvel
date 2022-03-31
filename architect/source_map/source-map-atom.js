@@ -18,7 +18,11 @@ const map = {
     ['component', { rPath: '/pages' }]
   ],
   characters: [
-    'page',
+    ['page', { rPath: '/characters', name: 'index' }],
+    'component',
+  ],
+  character: [
+    ['page', { rPath: '/characters/[id]' }],
     'component'
   ],
   card: [

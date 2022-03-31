@@ -1,5 +1,5 @@
 import { CharactersResponse } from '../../types/characters'
-import { GET_CHARACTERS, SET_CHARACTERS } from './actionNames'
+import { GET_CHARACTER, GET_CHARACTERS, SET_CHARACTER, SET_CHARACTERS } from './actionNames'
 
 export const getCharacters = (payload: number) => ({
   type: GET_CHARACTERS,
@@ -8,5 +8,15 @@ export const getCharacters = (payload: number) => ({
 
 export const setCharacters = (payload: CharactersResponse) => ({
   type: SET_CHARACTERS,
+  payload
+})
+
+export const getCharacter = (payload: number) => ({
+  type: GET_CHARACTER,
+  payload
+})
+
+export const setCharacter = (payload: CharactersResponse) => ({
+  type: SET_CHARACTER,
   payload
 })
